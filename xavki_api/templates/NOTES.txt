@@ -1,0 +1,15 @@
+
+XAVKI API :
+
+  image: {{ .Values.api_image }}
+  url: {{ .Values.api_ingress.url | default "None" }}
+
+Accès local :
+
+  Pour forwarder le port du service vers votre machine locale :
+
+    kubectl port-forward svc/api-{{ .Release.Name }} {{ .Values.api_port }}:{{ .Values.api_port }} -n {{ .Release.Namespace }}
+
+  Exemple (pour exposer le service sur le port local `8080`) :
+
+    kubectl port-forward svc/api-{{ .Release.Name }} 8080:{{ .Values.api_port }} -n {{ .Release.Namespace }}

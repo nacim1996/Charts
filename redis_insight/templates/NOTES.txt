@@ -1,0 +1,7 @@
+Image: {{ .Values.redisinsight_image }}
+Port: {{ .Values.redisinsight_port }}
+{{- if .Values.redisinsight_ingress.enabled }}
+URL: http://{{ .Values.redisinsight_ingress.url }}
+{{- else }}
+URL: http://localhost:{{ .Values.redisinsight_port }}
+{{- end }}

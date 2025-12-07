@@ -1,0 +1,5 @@
+redisinsight_image: redislabs/redisinsight
+redisinsight_port: 5540
+redisinsight_ingress:
+  enabled: true
+  url: redisinsight.local
